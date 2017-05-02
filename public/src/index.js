@@ -1,0 +1,3 @@
+import './vue';
+
+import './wavesurfer'
