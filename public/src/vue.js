@@ -6,7 +6,6 @@ import song from './wavesurfer';
 
 // console.log(song.on('region-click'));
 song.on('ready', function () {
-	console.log("HEUUUU");
 	vue.loading=false;
 });
 
@@ -26,7 +25,7 @@ var vue = new Vue({
 		playing: false,
 		stopped: false,
 		waitMsg: "play ?",
-		loadMsg: "loading... ",
+		loadMsg: "please fill a path and press enter... ",
 		playMsg: "stop ?",
 		// api: "//www.youtubeinmp3.com/fetch/?video="
 	},

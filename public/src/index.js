@@ -1,3 +1,2 @@
+import './wavesurfer';
 import './vue';
-
-import './wavesurfer'

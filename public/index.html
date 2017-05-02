@@ -10,25 +10,20 @@
 
 <body>
 
-  <div id="wave" >  </div>
+
+  <div id="wave" > 
+    <div id=timeline></div>
+ </div>
+
+
 <div id="root">
 	
   <div id="Content"></div>
-  <div @keydown.space="song.play()"></div>
-<!--   <div @keydown.space="song.play()"></div>
-  <div @keydown.space="song.play()"></div>
- -->
  	<input type="text" placeholder="youtube url" v-model="url" @keyup.13="fetch">
 	<input type="button" :value="message" @click="play">
 
 </div>
 
-
-	<!-- main wavesurfer.js lib -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
-
-<!-- wavesurfer.js regions -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.regions.min.js"></script>
   <script src="bundle.js"></script>
 
 </body>
