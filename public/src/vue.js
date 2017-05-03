@@ -45,21 +45,20 @@ var vue = new Vue({
 	methods:{
 		ajax:function() {
 			var json = this.json;
-			// $.ajax(
-			// 	type: "POST",
-			// 	url:"//freesound.org/apiv2/search/text/",
-			// 	data:{query:this.instrument},
-			// 	success:function (data) {
-			// 		json = data;
-			// 	},
-			// 	dataType : "application/json"
-			// );
 			$.getJSON("//freesound.org/apiv2/search/text/?token="+this.token+"&query="+this.instrument)
 			.done(function(data){
 				if(data.count==0){
 					this.json="no data, poor boy";
 				}else{
-					this.json=data;
+					this.json="waiting for load";
+					var io = data.results[0].id;
+					console.log(io);
+					$.get("//freesound.org/apiv2/sounds/"+io+'/?token='+this.token,function(data){
+						console.log(typeof data);
+						console.log(data);
+						console.log(data.previews['preview-hq-mp3']);
+						this.song.load(data.previews['preview-hq-mp3'])
+					}.bind(this));
 				}
 			}.bind(this))
 			.fail(function(){
@@ -68,7 +67,7 @@ var vue = new Vue({
 		},
 		fetch:function(ev){
 			this.loading = true;
-			console.log(this.url);
+
 			this.song.load(this.url);
 		},
 		play:function(){

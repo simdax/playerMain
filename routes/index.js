@@ -14,7 +14,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/search', function(req,res){
-  var url = "https://www.freesound.org/apiv2/search/text/?token="+token+"&query="+req.body.query;
+  var url = "https://www.freesound.org/apiv2/sounds/";
+  var query = "?token="+token+"&query="+req.body.query;
   console.log(url);
   res.redirect('/');
 })

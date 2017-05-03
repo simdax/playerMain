@@ -42,7 +42,9 @@ var wavesurfer = WaveSurfer.create({
         // SpectrogramPlugin.create({
         //     container:"#iu"
         // }),
-        RegionPlugin.create(),
+        RegionPlugin.create(
+        {    dragSelection: true}
+        ),
         TimelinePlugin.create({
             container:"#timeline"
         }),
