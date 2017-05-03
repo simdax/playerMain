@@ -21,9 +21,16 @@
   <div id="Content"></div>
  	<input type="text" placeholder="youtube url" v-model="url" @keyup.13="fetch">
 	<input type="button" :value="message" @click="play">
+  <p>{{percentage}}</p>
+
+<form @submit.prevent="ajax">
+  <input v-model="instrument" type="text" name="query">
+  <input type="submit">
+</form>
+
+<p v-text="jsonView"></p>
 
 </div>
-
   <script src="bundle.js"></script>
 
 </body>
